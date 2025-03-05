@@ -1,24 +1,64 @@
 body {
+  font-family: Arial, sans-serif;
   text-align: center;
-  background-color: #09122c;
-  color: aliceblue;
+  margin: 0;
+  padding: 20px;
+  background-color: #574964;
 }
 
-ul {
-  list-style: none;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+h1 {
+  color: #ffdab3;
 }
 
-input {
+form {
+  margin-bottom: 20px;
+}
+
+input[type='text'] {
   padding: 10px;
-  background-color: aquamarine;
-  border-radius: 20px;
-  width: 200px;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Grid layout for videos */
+.video-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.video-card {
+  width: 220px;
+  text-align: center;
+  background: white;
   padding: 10px;
-  background-color: blueviolet;
-  border-radius: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.thumbnail {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.video-title {
+  margin-top: 5px;
+  font-size: 14px;
+  font-weight: bold;
 }

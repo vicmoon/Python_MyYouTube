@@ -15,7 +15,7 @@ def search_youtube(query, page_token=None):
         "q": query,
         "key": YOUTUBE_API_KEY,
         "type": "video",
-        "maxResults": 20,
+        "maxResults": 50,
         "pageToken": page_token
     }
 

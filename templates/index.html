@@ -25,22 +25,25 @@
 
     {% if videos %}
     <h2>Results:</h2>
-    <ul>
+    {% if videos %}
+    <div class="video-grid">
       {% for video in videos %}
-      <li>
+      <div class="video-card">
         <a
           href="https://www.youtube.com/watch?v={{ video.id.videoId }}"
           target="_blank"
         >
           <img
-            src="{{ video.snippet.thumbnails.default.url }}"
+            src="{{ video.snippet.thumbnails.medium.url }}"
             alt="Thumbnail"
+            class="thumbnail"
           />
-          {{ video.snippet.title }}
         </a>
-      </li>
+        <p class="video-title">{{ video.snippet.title }}</p>
+      </div>
       {% endfor %}
-    </ul>
+    </div>
+    {% endif %}
 
     <!-- Pagination -->
     <div>
