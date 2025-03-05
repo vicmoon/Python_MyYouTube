@@ -4,9 +4,6 @@ body {
   margin: 0;
   padding: 20px;
   background-color: #574964;
-}
-
-h1 {
   color: #ffdab3;
 }
 
@@ -47,6 +44,7 @@ button:hover {
   width: 220px;
   text-align: center;
   background: white;
+  color: #574964;
   padding: 10px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
