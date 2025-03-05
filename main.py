@@ -12,6 +12,7 @@ def search_youtube(query, page_token=None):
     """Searches YouTube for videos based on a query."""
     params = {
         "part": "snippet",
+        "order": "date",
         "q": query,
         "key": YOUTUBE_API_KEY,
         "type": "video",
