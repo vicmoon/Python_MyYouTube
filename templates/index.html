@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+
+    <title>YouTube Search</title>
+  </head>
+  <body>
+    <h1>YouTube Video Search</h1>
+    <form method="post">
+      <input
+        type="text"
+        name="query"
+        placeholder="Search YouTube"
+        value="{{ query }}"
+        required
+      />
+      <button type="submit">Search</button>
+    </form>
+
+    {% if videos %}
+    <h2>Results:</h2>
+    <ul>
+      {% for video in videos %}
+      <li>
+        <a
+          href="https://www.youtube.com/watch?v={{ video.id.videoId }}"
+          target="_blank"
+        >
+          <img
+            src="{{ video.snippet.thumbnails.default.url }}"
+            alt="Thumbnail"
+          />
+          {{ video.snippet.title }}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+
+    <!-- Pagination -->
+    <div>
+      {% if prev_page_token %}
+      <a href="?query={{ query }}&page_token={{ prev_page_token }}"
+        >Previous Page</a
+      >
+      {% endif %} {% if next_page_token %}
+      <a href="?query={{ query }}&page_token={{ next_page_token }}"
+        >Next Page</a
+      >
+      {% endif %}
+    </div>
+    {% endif %}
+  </body>
+</html>

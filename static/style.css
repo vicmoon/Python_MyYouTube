@@ -1,0 +1,24 @@
+body {
+  text-align: center;
+  background-color: #09122c;
+  color: aliceblue;
+}
+
+ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+input {
+  padding: 10px;
+  background-color: aquamarine;
+  border-radius: 20px;
+  width: 200px;
+}
+
+button {
+  padding: 10px;
+  background-color: blueviolet;
+  border-radius: 30px;
+}
