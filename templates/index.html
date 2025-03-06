@@ -12,19 +12,20 @@
   </head>
   <body>
     <h1>YouTube Video Search</h1>
-    <form method="post">
-      <input
-        type="text"
-        name="query"
-        placeholder="Search YouTube"
-        value="{{ query }}"
-        required
-      />
-      <button type="submit">Search</button>
-    </form>
 
-    {% if videos %}
-    <h2>Results:</h2>
+    <form method="post">
+      <input type="text" name="query" placeholder="Search YouTube" value="{{ query }}" required>
+      
+      <select name="order">
+          <option value="relevance" {% if order == "relevance" %}selected{% endif %}>Most Relevant</option>
+          <option value="date" {% if order == "date" %}selected{% endif %}>Newest</option>
+          <option value="viewCount" {% if order == "viewCount" %}selected{% endif %}>Most Viewed</option>
+          <option value="rating" {% if order == "rating" %}selected{% endif %}>Highest Rated</option>
+      </select>
+  
+      <button type="submit">Search</button>
+  </form>
+  
     {% if videos %}
     <div class="video-grid">
       {% for video in videos %}
@@ -43,16 +44,16 @@
       </div>
       {% endfor %}
     </div>
-    {% endif %}
+ 
 
     <!-- Pagination -->
-    <div>
+    <div class="pagination">
       {% if prev_page_token %}
-      <a href="?query={{ query }}&page_token={{ prev_page_token }}"
+      <a href="?query={{ query }}&page_token={{ prev_page_token }}&order={{order}}"
         >Previous Page</a
       >
       {% endif %} {% if next_page_token %}
-      <a href="?query={{ query }}&page_token={{ next_page_token }}"
+      <a href="?query={{ query }}&page_token={{ next_page_token }}&order={{order}}"
         >Next Page</a
       >
       {% endif %}
