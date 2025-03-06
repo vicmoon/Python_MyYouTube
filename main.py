@@ -1,11 +1,14 @@
 from flask import Flask, render_template, request
 import requests
-import my_creds 
+# import my_creds 
+import os 
 
 app = Flask(__name__)
+YOUTUBE_API_KEY = os.getenv.YOUTUBE_API_KEY
+YOUTUBE_SEARCH_URL = os.getenv.YOUTUBE_SEARCH_URL
 
-YOUTUBE_API_KEY = my_creds.YOUTUBE_API_KEY
-YOUTUBE_SEARCH_URL = my_creds.YOUTUBE_SEARCH_URL
+# YOUTUBE_API_KEY = my_creds.YOUTUBE_API_KEY
+# YOUTUBE_SEARCH_URL = my_creds.YOUTUBE_SEARCH_URL
 
 def search_youtube(query, order="relevance", page_token=None):
     """Searches YouTube for videos based on a query and sorting order."""
