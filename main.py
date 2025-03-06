@@ -4,8 +4,8 @@ import requests
 import os 
 
 app = Flask(__name__)
-YOUTUBE_API_KEY = os.getenv.YOUTUBE_API_KEY
-YOUTUBE_SEARCH_URL = os.getenv.YOUTUBE_SEARCH_URL
+YOUTUBE_API_KEY = os.getenv("YOUTUBE_API_KEY")
+YOUTUBE_SEARCH_URL = os.getenv("YOUTUBE_SEARCH_URL")
 
 # YOUTUBE_API_KEY = my_creds.YOUTUBE_API_KEY
 # YOUTUBE_SEARCH_URL = my_creds.YOUTUBE_SEARCH_URL
